@@ -15,7 +15,6 @@ const Container = styled.div`
 
   &:not(.itemSelected) {
     height: calc(100vh - 40px);
-    width: 100%;
     padding: ${variables.spacing_base};
   }
 
@@ -27,7 +26,7 @@ const Container = styled.div`
     right: 0;
     overflow: auto;
 
-    @media only screen and (min-width: ${variables.screen_small}) and (max-height: 450px) {
+    @media only screen and (min-width: ${variables.screen_small}) and (max-height: 660px) {
       align-items: flex-start;
     }
   }
@@ -158,7 +157,7 @@ const NavigationItem = styled.div`
         left: 100%;
         border-style: solid;
         border-color: transparent ${variables.color_button_selected};
-        border-width: 26px 0 26px 15px;
+        border-width: 29px 0 29px 15px;
         width: 0;
         height: 0;
       }
@@ -218,7 +217,10 @@ export class Main extends Component {
               className={this.state.active === item ? 'selected' : ''}
               onClick={() => this.toggleComponent(index)}>
               <FontAwesomeIcon icon={item.icon} />
-              <h3>{item.label}</h3>
+              <div>
+                <h3>{item.label}</h3>
+                <p>{item.complete ? 'completed' : 'in progress'}</p>
+              </div>
             </NavigationItem>
           ))}
         </Navigation>
