@@ -3,9 +3,9 @@
 //
 
 // SCREENS
-export const screen_small = "600px";
-export const screen_medium = "900px";
-export const screen_large = "1200px";
+export const screen_width_small = "600px";
+export const screen_width_medium = "900px";
+export const screen_width_large = "1200px";
 
 // SPACING
 export const spacing_base = "20px";

@@ -3,6 +3,7 @@ import {
   CustomAutoSuggest,
   CustomCheckbox,
   CustomCheckboxMenu,
+  CustomEmpty,
   CustomInput,
   CustomInputRequirements,
   CustomMultiSelect,
@@ -36,6 +37,12 @@ export const componentList = [
     label: "Checkbox Menu",
     component: CustomCheckboxMenu,
     complete: true
+  },
+  {
+    icon: "circle-xmark",
+    label: "Empty",
+    component: CustomEmpty,
+    complete: false
   },
   {
     icon: "info-circle",

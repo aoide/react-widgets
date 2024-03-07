@@ -21,18 +21,18 @@ const InputGroup = styled.div`
   position: relative;
   display: flex;
 
-  @media only screen and (min-width: ${variables.screen_small}) {
+  @media only screen and (min-width: ${variables.screen_width_small}) {
     width: 400px;
   }
 
   input {
     pointer-events: none;
   
-    @media only screen and (min-width: ${variables.screen_small}) {
+    @media only screen and (min-width: ${variables.screen_width_small}) {
       width: ${variables.field_width};
     }
 
-    @media only screen and (max-width: ${variables.screen_small}) {
+    @media only screen and (max-width: ${variables.screen_width_small}) {
         width: 100%;
     }
   }
@@ -78,11 +78,11 @@ const Menu = styled.div`
     height: 0;
   }
 
-  @media only screen and (min-width: ${variables.screen_small}) {
+  @media only screen and (min-width: ${variables.screen_width_small}) {
     width: 400px;
   }
 
-  @media only screen and (max-width: ${variables.screen_small}) {
+  @media only screen and (max-width: ${variables.screen_width_small}) {
     width: 100%;
   }
 `;

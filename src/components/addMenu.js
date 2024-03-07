@@ -34,7 +34,7 @@ const AddButton = styled.div`
   transition: background 0.4s ease-in-out;
 
   ${Container}.closed & {
-    box-shadow: 5px 5px 10px 0px ${variables.color_shadow};
+    box-shadow: 5px 5px 10px 0 ${variables.color_shadow};
   }
 
   :hover {
@@ -49,7 +49,7 @@ const AddMenu = styled.div`
   padding-bottom: ${buttonSize};
   background: ${variables.color_button};
   border-radius: 25px;
-  box-shadow: 5px 5px 10px 0px ${variables.color_shadow};
+  box-shadow: 5px 5px 10px 0 ${variables.color_shadow};
   display: flex;
   height: auto;
   width: 200px;
