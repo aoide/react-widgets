@@ -34,11 +34,11 @@ const Menu = styled.div`
     height: 0;
   }
 
-  @media only screen and (min-width: ${variables.screen_small}) {
+  @media only screen and (min-width: ${variables.screen_width_small}) {
     width: 400px;
   }
 
-  @media only screen and (max-width: ${variables.screen_small}) {
+  @media only screen and (max-width: ${variables.screen_width_small}) {
     width: 100%;
   }
 `;

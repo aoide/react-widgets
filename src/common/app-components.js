@@ -1,8 +1,11 @@
 import {
+  CustomAddMenu,
   CustomAutoSuggest,
   CustomCheckbox,
   CustomCheckboxMenu,
+  CustomEmpty,
   CustomInput,
+  CustomInputRequirements,
   CustomMultiSelect,
   CustomSearch,
   CustomSelector,
@@ -11,6 +14,12 @@ import {
 } from "../components";
 
 export const componentList = [
+  {
+    icon: "bars",
+    label: "Add Menu",
+    component: CustomAddMenu,
+    complete: false
+  },
   {
     icon: "sort-alpha-down",
     label: "Autosuggest",
@@ -30,10 +39,22 @@ export const componentList = [
     complete: true
   },
   {
+    icon: "circle-xmark",
+    label: "Empty",
+    component: CustomEmpty,
+    complete: false
+  },
+  {
     icon: "info-circle",
     label: "Input with Tooltip",
     component: CustomInput,
     complete: true
+  },
+  {
+    icon: "exclamation-circle",
+    label: "Input with Requirements",
+    component: CustomInputRequirements,
+    complete: false
   },
   {
     icon: "list",

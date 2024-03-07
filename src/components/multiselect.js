@@ -19,7 +19,7 @@ const Container = styled.div`
 const SelectContainer = styled.div`
   display: flex;
 
-  @media only screen and (max-width: ${variables.screen_medium}) {
+  @media only screen and (max-width: ${variables.screen_width_medium}) {
     flex-direction: column;
   }
 `;
@@ -34,13 +34,13 @@ const SelectBox = styled.div`
   box-shadow: 5px 5px 10px 0px ${variables.color_shadow};
   overflow: hidden;
 
-  @media only screen and (min-width: ${variables.screen_medium}) {
+  @media only screen and (min-width: ${variables.screen_width_medium}) {
     &:first-child {
       margin-right: ${variables.spacing_large};
     }
   }
 
-  @media only screen and (max-width: ${variables.screen_medium}) {
+  @media only screen and (max-width: ${variables.screen_width_medium}) {
     width: 100%;
 
     &:first-child {
@@ -88,7 +88,7 @@ const SelectItem = styled.div`
   .hoverIcon {
     visibility: hidden;
 
-    @media only screen and (max-width: ${variables.screen_medium}) {
+    @media only screen and (max-width: ${variables.screen_width_medium}) {
       transform: rotate(90deg);
     }
   }

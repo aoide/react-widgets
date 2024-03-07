@@ -8,13 +8,12 @@ const GlobalStyle = createGlobalStyle`
     }
     
     #root {
-        display: flex;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        overflow: auto;
+        overflow: hidden;
     }
 
     body {
@@ -52,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
             box-shadow: 0px 0px 8px 0px ${variables.color_field_focus};
         }
 
-        @media only screen and (min-width: ${variables.screen_small}) {
+        @media only screen and (min-width: ${variables.screen_width_small}) {
             width: ${variables.field_width};
         }
     }

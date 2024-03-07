@@ -14,7 +14,6 @@ const Container = styled.div`
   display: flex;
 
   &:not(.itemSelected) {
-    height: calc(100vh - 40px);
     width: 100%;
     padding: ${variables.spacing_base};
   }
@@ -27,12 +26,12 @@ const Container = styled.div`
     right: 0;
     overflow: auto;
 
-    @media only screen and (min-width: ${variables.screen_small}) and (max-height: 450px) {
+    @media only screen and (min-width: ${variables.screen_width_small}) and (max-height: 660px) {
       align-items: flex-start;
     }
   }
 
-  @media only screen and (max-width: ${variables.screen_small}) {
+  @media only screen and (max-width: ${variables.screen_width_small}) {
     flex-direction: column;
   }
 `;
@@ -40,20 +39,19 @@ const Container = styled.div`
 const Navigation = styled.div`
   ${Container}:not(.itemSelected) & {
     width: 100%;
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-columns: auto;
 
-    @media only screen and (max-width: ${variables.screen_large}) {
+    @media only screen and (max-width: ${variables.screen_width_large}) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    @media only screen and (max-width: ${variables.screen_medium}) {
+    @media only screen and (max-width: ${variables.screen_width_medium}) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media only screen and (max-width: ${variables.screen_small}) {
+    @media only screen and (max-width: ${variables.screen_width_small}) {
       grid-template-columns: repeat(1, 1fr);
     }
   }
@@ -63,14 +61,14 @@ const Navigation = styled.div`
     background: ${variables.color_button};
     color: ${variables.color_button_text};
 
-    @media only screen and (min-width: ${variables.screen_small}) {
+    @media only screen and (min-width: ${variables.screen_width_small}) {
       display: flex;
       flex-direction: column;
       flex: 0 0 auto;
       width: 300px;
     }
 
-    @media only screen and (max-width: ${variables.screen_small}) {
+    @media only screen and (max-width: ${variables.screen_width_small}) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -89,8 +87,6 @@ const NavigationItem = styled.div`
   }
 
   ${Container}:not(.itemSelected) & {
-    align-content: center;
-    justify-content: center;
     text-align: center;
     font-size: 1.5em;
     padding: ${variables.spacing_base};
@@ -111,7 +107,7 @@ const NavigationItem = styled.div`
       border-radius: ${variables.border_radius};
     }
 
-    @media only screen and (min-width: ${variables.screen_small}) {
+    @media only screen and (min-width: ${variables.screen_width_small}) {
       flex-direction: column;
 
       .svg-inline--fa {
@@ -119,7 +115,7 @@ const NavigationItem = styled.div`
       }
     }
 
-    @media only screen and (max-width: ${variables.screen_small}) {
+    @media only screen and (max-width: ${variables.screen_width_small}) {
       .svg-inline--fa {
         margin-right: ${variables.spacing_base};
       }
@@ -138,7 +134,7 @@ const NavigationItem = styled.div`
       background: ${variables.color_button_hover};
     }
 
-    @media only screen and (max-width: ${variables.screen_small}) {
+    @media only screen and (max-width: ${variables.screen_width_small}) {
       width: 100%;
     }
   }
@@ -147,7 +143,7 @@ const NavigationItem = styled.div`
     background: ${variables.color_button_selected};
     pointer-events: none;
 
-    @media only screen and (min-width: ${variables.screen_small}) {
+    @media only screen and (min-width: ${variables.screen_width_small}) {
       position: relative;
 
       &::after {
@@ -158,7 +154,7 @@ const NavigationItem = styled.div`
         left: 100%;
         border-style: solid;
         border-color: transparent ${variables.color_button_selected};
-        border-width: 26px 0 26px 15px;
+        border-width: 29px 0 29px 15px;
         width: 0;
         height: 0;
       }
@@ -169,14 +165,14 @@ const NavigationItem = styled.div`
 const ComponentContainer = styled.div`
   position: relative;
 
-  @media only screen and (min-width: ${variables.screen_small}) {
+  @media only screen and (min-width: ${variables.screen_width_small}) {
     padding: 0 ${variables.spacing_large};
     height: 100%;
     width: 100%;
     overflow: auto;
   }
 
-  @media only screen and (max-width: ${variables.screen_small}) {
+  @media only screen and (max-width: ${variables.screen_width_small}) {
     & > * {
       padding: 0 ${variables.spacing_large};
     }
@@ -218,7 +214,10 @@ export class Main extends Component {
               className={this.state.active === item ? 'selected' : ''}
               onClick={() => this.toggleComponent(index)}>
               <FontAwesomeIcon icon={item.icon} />
-              <h3>{item.label}</h3>
+              <div>
+                <h3>{item.label}</h3>
+                <p>{item.complete ? 'completed' : 'in progress'}</p>
+              </div>
             </NavigationItem>
           ))}
         </Navigation>
